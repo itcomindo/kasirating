@@ -78,6 +78,44 @@ require_once get_template_directory() . '/components/components.php';
 
 
 // experimental 1 start
+add_filter('login_redirect', 'mm_custom_login_redirect', 10, 3);
+function mm_custom_login_redirect($redirect_to, $requested_redirect_to, $user)
+{
+    // Hanya lakukan pengalihan kustom jika login berhasil dan bukan error
+    if (!is_wp_error($user)) {
+        // Periksa apakah login berasal dari halaman khusus login
+        if (isset($_COOKIE['mm_last_visited'])) {
+            $login_page_url = home_url('/login/'); // Sesuaikan dengan URL halaman login Anda
+            $last_visited = $_COOKIE['mm_last_visited'];
+
+            // Jika melakukan login dari halaman /login/, alihkan ke homepage
+            if (strpos($last_visited, $login_page_url) !== false) {
+                return home_url();
+            } else {
+                // Jika login dari halaman lain, gunakan URL dari cookie sebagai URL pengalihan
+                return $last_visited;
+            }
+        }
+    }
+
+    // Jika tidak ada cookie atau terjadi error, lanjutkan menggunakan URL pengalihan standar
+    return $redirect_to;
+}
+
+
+
+
+
+add_action('init', 'mm_set_last_visited_cookie');
+function mm_set_last_visited_cookie()
+{
+    if (!is_user_logged_in()) {
+        $script_name = basename($_SERVER['SCRIPT_FILENAME']);
+        if (!in_array($script_name, ['wp-login.php', 'wp-register.php'])) {
+            setcookie('mm_last_visited', 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], time() + 3600, COOKIEPATH, COOKIE_DOMAIN, is_ssl());
+        }
+    }
+}
 
 
 // experimental 1 end

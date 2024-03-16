@@ -11,6 +11,43 @@ window.addEventListener('DOMContentLoaded', (event) => {
         //get screen width end
 
 
+        //launch modal-register-component start
+
+
+        function mmModalRegisterComponent() {
+
+            //open modal
+            jQuery('.register-selector').on('click', function () {
+                jQuery('#reg-modal-pr').toggleClass('active');
+            });
+
+
+            //close modal reg-modal-pr-close
+            jQuery('#reg-modal-pr-close').on('click', function () {
+                jQuery('#reg-modal-pr').removeClass('active');
+            });
+        }
+        mmModalRegisterComponent();
+
+
+        //launch modal-register-component end
+
+        function mmShowPassword() {
+            jQuery(".toggle-password").click(function () {
+                var input = jQuery(this).prev('input');
+                if (input.attr("type") === "password") {
+                    input.attr("type", "text");
+                    jQuery(this).html("<i class='fa-solid fa-eye-slash'></i>");
+                } else {
+                    input.attr("type", "password");
+                    jQuery(this).html("<i class='fa-solid fa-eye'></i>"); // Ini harus berbeda dari yang di atas untuk "tampilkan password"
+                }
+            });
+        }
+
+        mmShowPassword();
+
+
         // submit review start
 
         function mmSubmitReviewButton() {

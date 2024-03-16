@@ -114,6 +114,9 @@ function mm_load_assets()
     //mobile-app-component.css
     wp_enqueue_style('mm-mobile-app-component-css', get_template_directory_uri() . '/assets/css/mobile-app-component.css', array('mm-global-style'), $theme_version, 'all');
 
+    //registration-modal.css
+    wp_enqueue_style('mm-registration-modal-css', get_template_directory_uri() . '/assets/css/registration-modal.css', array('mm-global-style'), $theme_version, 'all');
+
 
     if (is_single() && !has_category('blog')) {
         //review-box.css
@@ -128,6 +131,9 @@ function mm_load_assets()
     if (is_page_template('register-page.php')) {
         //load register.css
         wp_enqueue_style('mm-register-css', get_template_directory_uri() . '/assets/css/register-page.css', array('mm-global-style'), $theme_version, 'all');
+
+        //load register-page.js
+        wp_enqueue_script('mm-register-js', get_template_directory_uri() . '/assets/js/register-page.js', array('jquery'), $theme_version, true);
     }
 
 

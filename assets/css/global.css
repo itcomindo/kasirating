@@ -82,9 +82,48 @@ form#loginform p {
   display: flex;
   flex-direction: column;
 }
+
+p.login-submit input {
+  cursor: pointer;
+}
+
 form#loginform p input {
   box-sizing: border-box;
   padding: 8px;
   border-radius: 5px;
   border: 1px solid var(--color-light-2);
+}
+
+span.toggle-password {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+}
+
+input#email.salah:focus {
+  border: 1px solid red;
+  outline: none;
+}
+
+input#email:focus {
+  border: 1px solid green;
+  outline: none;
+}
+
+button#reg-btn {
+  background-color: var(--color-accent-1-dark);
+  color: var(--color-light-2);
+  padding: 6px 2rem;
+  border-radius: 5px;
+}
+
+button#reg-btn.active {
+  background-color: var(--color-accent-2-dark);
+}
+
+.reg-form form {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  gap: 1rem;
 }

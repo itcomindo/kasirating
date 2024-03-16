@@ -13,8 +13,11 @@ if (is_single() && !has_category('blog')) {
 }
 
 if (!mm_is_user_logged_in()) {
-    get_template_part('components/moda-login-component');
+    get_template_part('components/modal-login-component');
+    get_template_part('components/modal-register-component');
 }
+
+
 
 
 wp_footer();

@@ -17,7 +17,7 @@ defined('ABSPATH') or die('No script kiddies please!');
             <div id="topbar-right">
                 <?php
                 echo mm_get_login_button();
-                echo mm_get_register_button();
+                echo mm_get_button()['modal-register'];
                 echo mm_logout_button();
                 ?>
             </div>
