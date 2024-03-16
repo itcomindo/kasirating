@@ -17,7 +17,8 @@ $rating = mm_get_rating_data();
                     the_post_thumbnail('full', array('class' => 'sing-fim-img'));
                     ?>
                 </div>
-                <div class="add-review"><i class="far fa-paper-plane"></i> Add Review</div>
+                <!-- submit button -->
+                <?php echo mm_get_button()['submit-review']; ?>
             </div>
             <div id="sing-right">
                 <h1 class="head smaller">

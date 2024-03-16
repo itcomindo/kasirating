@@ -3,15 +3,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     jQuery(function () {
 
         //jq start below
-
-
-
-
-
-
-
-
-
         //get screen width start
         function mmGetScreenWidth() {
             var $screenWidth = window.innerWidth;
@@ -19,8 +10,57 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
         //get screen width end
 
-        //mobile app start
 
+        // submit review start
+
+        function mmSubmitReviewButton() {
+
+
+            //open review box for logged user
+            function reviewBoxForLoggedUser() {
+                jQuery('.add-review').on('click', function () {
+                    jQuery('#rev-box-pr').addClass('active');
+                });
+
+                //close review box rev-box-pr-close
+                jQuery('#rev-box-pr-close').on('click', function () {
+                    jQuery('#rev-box-pr').removeClass('active');
+                });
+            }
+            reviewBoxForLoggedUser();
+
+
+            //open modal for not logged user
+            function reviewBoxForNotLoggedUser() {
+                jQuery('.not-logged-in').on('click', function () {
+                    jQuery('#modal-login').addClass('active');
+                    // alert('You must be logged in to submit a review');
+                });
+
+                //close modal
+                jQuery('#modal-login-close').on('click', function () {
+                    jQuery('#modal-login').removeClass('active');
+                });
+            }
+            reviewBoxForNotLoggedUser();
+
+
+
+
+
+        }
+        mmSubmitReviewButton();
+
+
+
+        //submit review end
+
+
+
+
+
+
+        //mobile app start
         function mmMobileApp() {
             if (mmGetScreenWidth() < 992) {
                 jQuery('#mc-home').on('click', function (e) {
@@ -30,7 +70,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 });
             }
         }
-        mmMobileApp();
+        // mmMobileApp();
 
         //mobile app end
 
@@ -62,7 +102,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 setInterval(mm_updt, 1000);
             }
         }
-        mmTopbarDateTime();
+        // mmTopbarDateTime();
 
 
         //topbar dateTime end
@@ -171,7 +211,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             });
         }
 
-        mmShowHeaderMenuChildren();
+        // mmShowHeaderMenuChildren();
         //menambahkan class active pada li.menu-item-has-children end
 
 
@@ -198,12 +238,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
             if ($adsFloBotStatus == 'true' && $sw > 541) {
                 runAdsFloBottom();
             }
-
-
-
-
         }
-        mmAdsFixedBottom();
+        // mmAdsFixedBottom();
 
 
         //mentahan close ads fixed bottom end
@@ -250,7 +286,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             }
         }
-        adsBeforeHeader();
+        // adsBeforeHeader();
 
 
         // mentahan ads before header end
@@ -276,7 +312,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }
             adsFlo();
         }
-        adsFloatingLeftRight();
+        // adsFloatingLeftRight();
 
 
 
@@ -313,7 +349,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 uc();
             });
         }
-        mmUC();
+        // mmUC();
 
 
 

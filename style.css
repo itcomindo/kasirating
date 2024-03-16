@@ -743,8 +743,27 @@ a.hw100 {
   width: 100%;
   display: block;
 }
+
+.w25 {
+  width: 25px;
+}
+
+.w30 {
+  width: 30px;
+}
+
+.w40 {
+  width: 40px;
+}
+
+.w60 {
+  width: 60px;
+}
 .w100 {
   width: 100%;
+}
+.wauto {
+  width: auto;
 }
 .hauto {
   height: auto;
@@ -895,6 +914,10 @@ a.load-more.small {
   font-size: 85%;
 }
 
+button.btn {
+  border: unset;
+}
+button.btn,
 a.btn {
   display: block;
   width: -webkit-max-content;

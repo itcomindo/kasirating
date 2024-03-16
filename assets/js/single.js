@@ -22,15 +22,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         mm_divd();
 
 
-        //open review box
-        jQuery('.add-review').on('click', function () {
-            jQuery('#rev-box-pr').addClass('active');
-        });
 
-        //close review box rev-box-pr-close
-        jQuery('#rev-box-pr-close').on('click', function () {
-            jQuery('#rev-box-pr').removeClass('active');
-        });
 
 
 
