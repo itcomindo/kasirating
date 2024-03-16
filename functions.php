@@ -6,9 +6,6 @@
 
 defined('ABSPATH') or die('No script kiddies please!');
 
-
-
-
 /**
  * Add theme Supports
  */
@@ -22,7 +19,6 @@ add_theme_support('widgets');
 add_filter('use_block_editor_for_post', '__return_false', 10);
 
 
-
 /**
  * get Theme version from the style.css
  */
@@ -31,11 +27,6 @@ function mm_get_theme_version()
     $theme = wp_get_theme();
     return $theme->get('Version');
 }
-
-
-
-
-
 
 
 /**
@@ -65,11 +56,6 @@ function crb_load()
 }
 
 
-
-
-
-
-
 /**
  * Load the Required Files
  */
@@ -78,11 +64,11 @@ function crb_load()
 // require_once get_template_directory() . '/options/options.php';
 require_once get_template_directory() . '/assets/assets.php';
 require_once get_template_directory() . '/systems/systems.php';
+require_once get_template_directory() . '/queries/queries.php';
 // require_once get_template_directory() . '/inc/inc.php';
 // require_once get_template_directory() . '/sections/sections.php';
 // require_once get_template_directory() . '/components/components.php';
 // require_once get_template_directory() . '/plugins/plugins.php';
-// require_once get_template_directory() . '/queries/queries.php';
 // require_once get_template_directory() . '/assets/images/images.php';
 // require_once get_template_directory() . '/widgets/widgets.php';
 // require_once get_template_directory() . '/sidebars/sidebars.php';
