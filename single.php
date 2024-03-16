@@ -6,7 +6,7 @@
 
 defined('ABSPATH') or die('No script kiddies please!');
 get_header();
-
+$rating = mm_get_rating_data();
 ?>
 <section id="sing" class="section small">
     <div class="container">
@@ -32,13 +32,11 @@ get_header();
 
                 <div id="sing-rating-wr">
                     <div id="sing-rating-left">
-                        <span>4.1</span>
+                        <span><?php echo mm_get_rating_data()['rating']; ?></span>
                         <div class="srrl-stars-wr">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star-half-stroke"></i>
+                            <?php
+                            echo mm_get_stars();
+                            ?>
                         </div>
                     </div>
                     <div id="sing-rating-right">

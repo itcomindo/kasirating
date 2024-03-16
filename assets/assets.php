@@ -71,6 +71,9 @@ function mm_load_assets()
     //news-ticker.css
     wp_enqueue_style('mm-news-ticker-css', get_template_directory_uri() . '/assets/css/news-ticker.css', array('mm-global-style'), $theme_version, 'all');
 
+    //front-page.css
+    wp_enqueue_style('mm-front-page-css', get_template_directory_uri() . '/assets/css/front-page.css', array('mm-global-style'), $theme_version, 'all');
+
     //header.css
     wp_enqueue_style('mm-header-css', get_template_directory_uri() . '/assets/css/header.css', array('mm-global-style'), $theme_version, 'all');
 
@@ -110,6 +113,15 @@ function mm_load_assets()
 
     //mobile-app-component.css
     wp_enqueue_style('mm-mobile-app-component-css', get_template_directory_uri() . '/assets/css/mobile-app-component.css', array('mm-global-style'), $theme_version, 'all');
+
+
+    if (is_single() && !has_category('blog')) {
+        //review-box.css
+        wp_enqueue_style('mm-review-box-css', get_template_directory_uri() . '/assets/css/review-box.css', array('mm-global-style'), $theme_version, 'all');
+
+        //review-box.js
+        wp_enqueue_script('mm-review-box-js', get_template_directory_uri() . '/assets/js/review-box.js', array('jquery'), $theme_version, true);
+    }
 
 
     //if page template is register page

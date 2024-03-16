@@ -65,9 +65,10 @@ function crb_load()
 require_once get_template_directory() . '/assets/assets.php';
 require_once get_template_directory() . '/systems/systems.php';
 require_once get_template_directory() . '/queries/queries.php';
+require_once get_template_directory() . '/data/data.php';
+require_once get_template_directory() . '/components/components.php';
 // require_once get_template_directory() . '/inc/inc.php';
 // require_once get_template_directory() . '/sections/sections.php';
-// require_once get_template_directory() . '/components/components.php';
 // require_once get_template_directory() . '/plugins/plugins.php';
 // require_once get_template_directory() . '/assets/images/images.php';
 // require_once get_template_directory() . '/widgets/widgets.php';

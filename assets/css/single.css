@@ -1,6 +1,9 @@
 #sing {
   margin-bottom: 4px;
 }
+#sing .rating {
+  font-size: 1.5rem;
+}
 
 #sing-wr {
   display: grid;

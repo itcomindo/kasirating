@@ -878,6 +878,14 @@ a.hw100 {
 * @todo button and links
 *=========================
 */
+
+.btn.submit {
+  background-color: var(--color-accent-1);
+  width: max-content;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
 a {
   text-decoration: none;
   color: inherit;

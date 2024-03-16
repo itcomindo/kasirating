@@ -1,0 +1,94 @@
+#rev-box-pr {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-light-2);
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+#rev-box-pr-close {
+  position: absolute;
+  right: 16px;
+  width: max-content;
+  color: red;
+  font-size: 12px;
+  z-index: 2;
+}
+#rev-box-pr.active {
+  visibility: visible;
+  opacity: 1;
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+}
+
+button#kirim-rating {
+  border: none;
+}
+button#kirim-rating.active {
+  background-color: var(--color-accent-2-dark);
+  transition: all 0.3s ease-in-out;
+}
+
+.form-item .btn.submit {
+  color: var(--color-light-2);
+}
+
+#rev-box-wr {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#rev-box-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+textarea#isi-review {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--transparent-dark-2);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+#mm-rating.rating {
+  direction: rtl; /* Membalik arah agar bintang dimulai dari kanan */
+  font-size: 0;
+}
+
+#mm-rating.rating > input {
+  display: none;
+}
+
+#mm-rating.rating > label {
+  display: inline-block;
+  font-size: 30px;
+  padding: 1px;
+  cursor: pointer;
+  color: #ccc; /* Warna bintang ketika belum dipilih */
+}
+
+#mm-rating.rating > input:checked ~ label,
+#mm-rating.rating > input:hover ~ label,
+#mm-rating.rating > label:hover ~ input:checked ~ label {
+  /* Saat bintang dipilih atau di-hover */
+  color: var(--color-accent-1); /* Warna bintang ketika dipilih atau di-hover */
+}
+
+/* Vendor Prefixes */
+#mm-rating.rating > label:before {
+  content: "\f005"; /* Kode FontAwesome untuk bintang */
+  font-family: FontAwesome;
+}

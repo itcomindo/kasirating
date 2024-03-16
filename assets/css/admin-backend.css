@@ -35,3 +35,8 @@
 #carbon_fields_container_post_options .postbox-header h2 {
   color: whitesmoke;
 }
+
+#tmpl-acf-field-group-pro-features,
+.acf-admin-notice.notice.notice-warning {
+  display: none !important;
+}
