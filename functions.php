@@ -106,7 +106,7 @@ function mm_custom_login_redirect($redirect_to, $requested_redirect_to, $user)
 
 
 
-// add_action('init', 'mm_set_last_visited_cookie');
+add_action('init', 'mm_set_last_visited_cookie');
 function mm_set_last_visited_cookie()
 {
     if (!is_user_logged_in()) {
