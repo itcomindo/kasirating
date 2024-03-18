@@ -31,6 +31,15 @@
   transition: all 0.3s ease-in-out;
 }
 
+ul.step-list {
+  display: flex;
+}
+ul.step-list li {
+  padding: 4px 1rem;
+  color: var(--color-accent-1);
+  cursor: pointer;
+}
+
 button#kirim-rating {
   border: none;
 }
@@ -43,7 +52,7 @@ button#kirim-rating.active {
   color: var(--color-light-2);
 }
 
-#rev-box-wr {
+.rev-box-wr {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -61,6 +70,7 @@ textarea#isi-review {
   border: 1px solid var(--transparent-dark-2);
   border-radius: 10px;
   padding: 16px;
+  margin-bottom: 1rem;
 }
 
 #mm-rating.rating {
@@ -91,4 +101,37 @@ textarea#isi-review {
 #mm-rating.rating > label:before {
   content: "\f005"; /* Kode FontAwesome untuk bintang */
   font-family: FontAwesome;
+}
+
+/**
+=========================
+* Revbox
+*=========================
+*/
+
+.step-box.hide {
+  display: none;
+}
+
+.rev-box-next-prev-wr {
+  width: auto;
+  position: absolute;
+  bottom: 0;
+  right: 16px;
+  font-size: 14px;
+}
+
+#rev-box-step-two .rev-box-next-prev-wr {
+  width: 100%;
+}
+#rev-box-step-two .rev-box-next-prev-wr .rev-box-next-prev {
+  position: absolute;
+  bottom: 16px;
+}
+
+.rev-box-prev {
+  left: 16px;
+}
+.rev-box-next {
+  right: 16px;
 }

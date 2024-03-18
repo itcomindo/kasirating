@@ -897,7 +897,10 @@ a.hw100 {
 * @todo button and links
 *=========================
 */
-
+a.text-link {
+  font-style: italic;
+  color: var(--color-accent-1);
+}
 .btn.submit {
   background-color: var(--color-accent-1);
   width: max-content;

@@ -124,5 +124,5 @@ $rating = mm_get_rating_data();
     </div>
 </section>
 <?php
-
+get_template_part('sections/rating-section');
 get_footer();

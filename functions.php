@@ -67,10 +67,10 @@ require_once get_template_directory() . '/systems/systems.php';
 require_once get_template_directory() . '/queries/queries.php';
 require_once get_template_directory() . '/data/data.php';
 require_once get_template_directory() . '/components/components.php';
+require_once get_template_directory() . '/assets/images/images.php';
 // require_once get_template_directory() . '/inc/inc.php';
 // require_once get_template_directory() . '/sections/sections.php';
 // require_once get_template_directory() . '/plugins/plugins.php';
-// require_once get_template_directory() . '/assets/images/images.php';
 // require_once get_template_directory() . '/widgets/widgets.php';
 // require_once get_template_directory() . '/sidebars/sidebars.php';
 // require_once get_template_directory() . '/fields/fields.php';
@@ -106,7 +106,7 @@ function mm_custom_login_redirect($redirect_to, $requested_redirect_to, $user)
 
 
 
-add_action('init', 'mm_set_last_visited_cookie');
+// add_action('init', 'mm_set_last_visited_cookie');
 function mm_set_last_visited_cookie()
 {
     if (!is_user_logged_in()) {

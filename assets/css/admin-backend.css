@@ -40,3 +40,7 @@
 .acf-admin-notice.notice.notice-warning {
   display: none !important;
 }
+
+.user-edit-php .acf-field p.description {
+  margin-top: 0px !important;
+}

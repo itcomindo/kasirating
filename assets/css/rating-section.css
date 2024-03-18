@@ -1,0 +1,115 @@
+.rat-item-wr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ratinput-wr input {
+  display: none;
+}
+
+/* staring start */
+
+.rat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ratinput-wr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.ratinput-wr label {
+  display: inline-block;
+  font-size: 30px;
+  padding: 1px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.rat-item form label:before {
+  content: "\f005";
+  font-family: FontAwesome;
+  font-size: 1.3rem;
+}
+
+.ratinput-wr {
+  direction: rtl;
+  font-size: 0;
+}
+
+.ratinput-wr > input {
+  display: none;
+}
+
+.ratinput-wr > label {
+  display: inline-block;
+  font-size: 30px;
+  padding: 1px;
+  cursor: pointer;
+  color: #ccc;
+}
+/* .ratinput-wr > input:checked ~ label,
+.ratinput-wr > input:hover ~ label,
+.ratinput-wr > label:hover ~ input:checked ~ label {
+  color: var(--color-accent-1);
+} */
+
+.ratinput-wr > label:hover {
+  color: var(--color-accent-1); /* Warna saat hover */
+}
+
+/* Mengubah warna label saat radio button di-check */
+.ratinput-wr > input:checked + label {
+  color: var(--color-accent-1); /* Warna saat checked */
+}
+
+/* staring end */
+
+#rat-avg-wr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#rat-avg-content {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+#rat-avg-content:before {
+  content: "";
+  width: 200px;
+  height: 2px;
+  background-color: var(--color-accent-1);
+  position: absolute;
+  top: 50%;
+  left: -216px;
+  transform: translateY(-50%);
+}
+#rat-avg-content:after {
+  content: "";
+  width: 200px;
+  height: 2px;
+  background-color: var(--color-accent-1);
+  position: absolute;
+  top: 50%;
+  right: -216px;
+  transform: translateY(-50%);
+}
+#rat-avg-content #rat-avg-num {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.selected-label {
+  color: darkred; /* Ganti dengan kode warna merah tua yang diinginkan */
+}

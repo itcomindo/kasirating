@@ -1,29 +1,27 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    // jQuery(function () {
-    //     function getRating() {
-    //         jQuery('#mm-rating input').change(function () {
-    //             var mm_val = jQuery(this).val();
-    //             jQuery('#kirim-rating').on('click', function () {
-    //                 alert('Anda telah memberikan rating ' + mm_val);
-    //             });
-    //         });
-    //     }
-    //     getRating();
-    // });
 
     jQuery(function () {
         var mm_val = ''; // Menyimpan nilai rating yang dipilih
 
         // Fungsi untuk memeriksa kondisi pengisian form dan mengaktifkan/menonaktifkan tombol kirim
         function checkFormStatus() {
+
+            var nextToSteepTwo = jQuery('.next-to-step-two');
+            var nextToSteepThree = jQuery('.next-to-step-three');
+            nextToSteepTwo.hide();
+            nextToSteepThree.hide();
+
+
+
             var reviewLength = jQuery('#isi-review').val().length;
-            var charsLeft = 200 - reviewLength; // Hitung karakter tersisa
+            var charsLeft = 2 - reviewLength; // Hitung karakter tersisa
 
             // Tampilkan karakter tersisa atau sembunyikan jika sudah mencapai atau melebihi 200 karakter
             if (charsLeft >= 0) {
-                jQuery('#char-count').text(charsLeft + ' karakter tersisa').show(); // Tampilkan karakter tersisa
+                jQuery('#char-count small').text(charsLeft + ' karakter tersisa').show(); // Tampilkan karakter tersisa
             } else {
-                jQuery('#char-count').hide(); // Sembunyikan char-count
+                // jQuery('#char-count small').hide(); // Sembunyikan char-count
+                nextToSteepTwo.show();
             }
 
             // Cek apakah sudah memilih rating dan isi review >= 200 karakter
@@ -55,6 +53,34 @@ window.addEventListener('DOMContentLoaded', (event) => {
         // Inisialisasi status form saat pertama kali dimuat
         checkFormStatus();
     });
+
+
+
+
+
+
+    function nextPrev() {
+        var next = jQuery('.rev-box-next');
+        next.on('click', function () {
+            var step = jQuery(this).data('next');
+            console.log(step);
+            jQuery('.step-box').hide(100);
+            jQuery('.step-box.' + step).show(100).removeClass('hide');
+        });
+
+
+        var prev = jQuery('.rev-box-prev');
+        prev.on('click', function () {
+            var step = jQuery(this).data('prev');
+            console.log(step);
+            jQuery('.step-box').hide(100);
+            jQuery('.step-box.' + step).show(100).removeClass('hide');
+        });
+
+
+
+    }
+    nextPrev();
 
 
 
